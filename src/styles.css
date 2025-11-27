@@ -1,0 +1,244 @@
+/* Theme: Blue, White, Purple */
+:root {
+  --bg: #f6f8fb;
+  --card-bg: #ffffff;
+  --primary: #2563eb; /* blue 600 */
+  --primary-600: #1d4ed8;
+  --accent: #7c3aed; /* purple */
+  --muted: #6b7280;
+  --success: #16a34a;
+  --danger: #dc2626;
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #eef2ff 0%, var(--bg) 100%);
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app main {
+  padding: 32px;
+  max-width: 1100px;
+  margin: 24px auto;
+}
+
+/* Navbar */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  background: linear-gradient(
+    90deg,
+    rgba(37, 99, 235, 0.95),
+    rgba(124, 58, 237, 0.95)
+  );
+  color: #fff;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+}
+.nav-brand {
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.2px;
+}
+.nav-dot {
+  color: var(--bg);
+  margin-left: 6px;
+}
+.nav-links {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+}
+.nav-links li {
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  opacity: 0.95;
+}
+.nav-links li.active,
+.nav-links li:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Page layout */
+.page {
+  display: block;
+}
+.hero {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+}
+.hero-left {
+  flex: 1;
+}
+.hero-right {
+  width: 380px;
+}
+.card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+.lead {
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin: 0;
+  color: #0f172a;
+}
+.features {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+}
+.feature {
+  background: linear-gradient(
+    180deg,
+    rgba(37, 99, 235, 0.06),
+    rgba(124, 58, 237, 0.04)
+  );
+  padding: 18px;
+  border-radius: 12px;
+  flex: 1;
+}
+.feature h3 {
+  margin: 0 0 8px 0;
+}
+
+.info {
+  margin-top: 36px;
+}
+.info-grid {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+.grid-item {
+  flex: 1;
+  background: linear-gradient(180deg, #fff, #fdf5ff);
+  padding: 18px;
+  border-radius: 12px;
+}
+
+/* Auth pages */
+.auth-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+.auth-card {
+  max-width: 520px;
+  width: 100%;
+}
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 10px;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+.form-group input,
+.form-group select {
+  padding: 12px;
+  border: 1px solid #e6eefb;
+  border-radius: 8px;
+  background: #fff;
+}
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.06);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn-primary {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color: #fff;
+}
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+}
+.btn-block {
+  width: 100%;
+}
+
+.error-message {
+  background: #fff0f0;
+  border: 1px solid #fee2e2;
+  color: var(--danger);
+  padding: 12px;
+  border-radius: 8px;
+}
+.success-message {
+  background: #eefcf3;
+  border: 1px solid #bbf7d0;
+  color: var(--success);
+  padding: 12px;
+  border-radius: 8px;
+}
+
+/* Small screens */
+@media (max-width: 880px) {
+  .hero {
+    flex-direction: column;
+    padding: 12px;
+  }
+  .hero-right {
+    width: 100%;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .nav {
+    padding: 14px;
+  }
+}
+
+/* Footer */
+footer {
+  padding: 28px;
+  text-align: center;
+  color: var(--muted);
+}
